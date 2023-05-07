@@ -1,7 +1,7 @@
 #include "../Common.h"
 
 char *SERVERIP = (char *)"127.0.0.1";
-#define SERVERPORT 9000
+#define SERVERPORT 1234
 #define BUFSIZE 512
 
 int main(int ac, char **av)
@@ -50,18 +50,18 @@ int main(int ac, char **av)
 
         printf("[TCP 클라이언트] %d바이트를 보냈습니다.\n", retval);
 
-        retval = recv(sock, buf, retval, MSG_WAITALL);
-        if (retval == SOCKET_ERROR) {
-            err_display("recv()");
-            break ;
-        }
-        else if (retval == 0) {
-            break ;
-        }
+        // retval = recv(sock, buf, retval, MSG_WAITALL);
+        // if (retval == SOCKET_ERROR) {
+        //     err_display("recv()");
+        //     break ;
+        // }
+        // else if (retval == 0) {
+        //     break ;
+        // }
 
-        buf[retval] = '\0';
-        printf("[TCP 클라이언트] %d바이트를 받았습니다.\n", retval);
-        printf("[받은 데이터] %s\n", buf);
+        // buf[retval] = '\0';
+        // printf("[TCP 클라이언트] %d바이트를 받았습니다.\n", retval);
+        // printf("[받은 데이터] %s\n", buf);
         
     }
     close(sock);
